@@ -7,7 +7,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class MetaBlogApplication {
 
 	public static void main(String[] args) {
-		System.out.println("==== main merge test ====");
 		SpringApplication.run(MetaBlogApplication.class, args);
 	}
 

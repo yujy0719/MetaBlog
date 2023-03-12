@@ -1,5 +1,7 @@
 package com.cos.blog.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -25,6 +27,13 @@ public class BoardService {
 		board.setUser(user);
 		boardRepository.save(board);
 		return 1;
+	}
+	
+	@Transactional // 여러개의 서비스를 하나의 트랙잭션 로직으로 묶인다. 
+	public List<Board> selectAllBoard() {
+		log.info("[selectAllBoard_글목록] ");
+		List<Board> boardList = boardRepository.findAll();
+		return boardList;
 	}
 
 }
